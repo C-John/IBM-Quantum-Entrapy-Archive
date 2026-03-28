@@ -29,3 +29,24 @@ Architecture & Initial Logic
 Directory Standards: Implemented the Standard Maven Directory Layout (src/main/java/com/calder/archive/).
 
 Executed ArchiveEngine.java: proving the code environment can successfully initialize a Hadoop Configuration object for the Extract phase.
+
+Phase 2: Secure Extraction & Environment Hardening
+Unit Standards & Quantum Scale
+•	Time Resolution: Defined and documented µs (microseconds) as the primary unit for T1 and T2 measurements, equating to one-millionth (10^-6) of a second.
+•	Metric Context: Established the "Blink vs. Qubit" scale—where a human blink (~ 350,000 µs) outlasts a stable qubit state (~ 220 µs) by over 1,500 times.
+Zero-Dependency Security (The Pure Java Pattern)
+•	Library Sovereignty: Rejected third-party GitHub libraries (io.github.cdimascio:dotenv-java) in favor of built-in Java utilities to minimize security surface area.
+•	Maven Purge Mastery: Executed mvn dependency:purge-local-repository and rm -rf to physically erase discarded external artifacts from the local .m2 repository.
+•	Native File I/O: Implemented java.util.Properties combined with Try-with-Resources to safely stream secrets from .env while ensuring the file closes automatically to prevent memory leaks.
+Modern Java Networking (The Handshake)
+•	HttpClient Implementation: Leveraged the native java.net.http.HttpClient (available in OpenJDK 25) to perform asynchronous API requests without external HTTP clients.
+•	Auth Lifecycle: Successfully validated the API handshake against the IBM Auth endpoint, confirming that the Extract phase is authenticated and ready to pull real-time hardware JSON.
+
+OAuth2 & Identity Management (The Secure Exchange) 
+•	IAM Integration: Successfully implemented the IBM Cloud Identity and Access Management (IAM) handshake, shifting from legacy subdomains to the official https://iam.cloud.ibm.com/identity/token endpoint.
+•	Protocol Mastery: Hand-authored a POST request using application/x-www-form-urlencoded to securely exchange a static API key for a short-lived (60-minute) Bearer token.
+•	Scope & Security: Verified token attributes including expires_in: 3600 and scope: ibm openid, ensuring the Extract phase follows modern enterprise security standards.
+Environment Resilience 
+•	DNS & Infrastructure Troubleshooting: Resolved a critical UnresolvedAddressException by diagnosing a Docker Engine failure and executing a WSL subsystem shutdown to reset the container's network bridge.
+•	URL Migration: Successfully navigated the deprecation of legacy IBM Quantum endpoints, identifying and implementing the consolidated 2026 Cloud API structure.
+
