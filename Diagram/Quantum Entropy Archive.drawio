@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" version="29.6.6">
+  <diagram name="Page-1" id="4ItpcBMtTUk1Kmrmd-j2">
+    <mxGraphModel dx="1248" dy="612" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="a9_Ok4SKdopmHHIttT-q-14" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#ffcc99;strokeColor=#36393d;" value="Step 2: Transform (Flattening)" vertex="1">
+          <mxGeometry height="208" width="920" x="260" y="358" as="geometry" />
+        </mxCell>
+        <mxCell id="a9_Ok4SKdopmHHIttT-q-15" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="IBM Quantum API" vertex="1">
+          <mxGeometry height="54" width="181" x="629" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="a9_Ok4SKdopmHHIttT-q-16" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Java Cleaning Engine" vertex="1">
+          <mxGeometry height="54" width="211" x="615" y="383" as="geometry" />
+        </mxCell>
+        <mxCell id="a9_Ok4SKdopmHHIttT-q-17" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Extract Metadata: &#xa;Timestamp, Machine, Qubit ID" vertex="1">
+          <mxGeometry height="54" width="260" x="295" y="487" as="geometry" />
+        </mxCell>
+        <mxCell id="a9_Ok4SKdopmHHIttT-q-18" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Extract Health: &#xa;T1 &amp; T2" vertex="1">
+          <mxGeometry height="54" width="230" x="605" y="487" as="geometry" />
+        </mxCell>
+        <mxCell id="a9_Ok4SKdopmHHIttT-q-19" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Extract Errors: &#xa;Readout &amp; Gate" vertex="1">
+          <mxGeometry height="54" width="260" x="885" y="487" as="geometry" />
+        </mxCell>
+        <mxCell id="a9_Ok4SKdopmHHIttT-q-20" parent="1" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=10;strokeWidth=2;whiteSpace=wrap;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" value="Local Data Lake: &#xa;Parquet Files" vertex="1">
+          <mxGeometry height="86" width="215" x="613" y="616" as="geometry" />
+        </mxCell>
+        <mxCell id="a9_Ok4SKdopmHHIttT-q-21" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" value="Power BI: &#xa;Hardware Heatmap" vertex="1">
+          <mxGeometry height="54" width="260" x="590" y="776" as="geometry" />
+        </mxCell>
+        <mxCell id="a9_Ok4SKdopmHHIttT-q-22" edge="1" parent="1" source="a9_Ok4SKdopmHHIttT-q-15" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="a9_Ok4SKdopmHHIttT-q-16" value="Step 1: JSON Calibration Report">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a9_Ok4SKdopmHHIttT-q-23" edge="1" parent="1" source="a9_Ok4SKdopmHHIttT-q-16" style="curved=1;startArrow=none;endArrow=block;exitX=0;exitY=0.84;entryX=0.5;entryY=0;rounded=0;" target="a9_Ok4SKdopmHHIttT-q-17" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="425" y="462" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a9_Ok4SKdopmHHIttT-q-24" edge="1" parent="1" source="a9_Ok4SKdopmHHIttT-q-16" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="a9_Ok4SKdopmHHIttT-q-18" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a9_Ok4SKdopmHHIttT-q-25" edge="1" parent="1" source="a9_Ok4SKdopmHHIttT-q-16" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.84;entryX=0.5;entryY=0;rounded=0;" target="a9_Ok4SKdopmHHIttT-q-19" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1015" y="462" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a9_Ok4SKdopmHHIttT-q-26" edge="1" parent="1" source="a9_Ok4SKdopmHHIttT-q-17" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0;entryY=0.21;rounded=0;" target="a9_Ok4SKdopmHHIttT-q-20" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="425" y="591" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a9_Ok4SKdopmHHIttT-q-27" edge="1" parent="1" source="a9_Ok4SKdopmHHIttT-q-18" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="a9_Ok4SKdopmHHIttT-q-20" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a9_Ok4SKdopmHHIttT-q-28" edge="1" parent="1" source="a9_Ok4SKdopmHHIttT-q-19" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=1;entryY=0.21;rounded=0;" target="a9_Ok4SKdopmHHIttT-q-20" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1015" y="591" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a9_Ok4SKdopmHHIttT-q-29" edge="1" parent="1" source="a9_Ok4SKdopmHHIttT-q-20" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0.01;rounded=0;" target="a9_Ok4SKdopmHHIttT-q-21" value="Step 4: Visualize">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DdvuT3ChEnp2PiptV9hn-1" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;p class=&quot;MsoFooter&quot;&gt;&lt;span style=&quot;font-size:8.0pt&quot;&gt;This Project. Copyright (c)&#xa;2026 Calder Henry. All rights reserved.&lt;/span&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="80" width="220" x="250" y="750" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
