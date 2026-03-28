@@ -1,0 +1,16 @@
+# Java & Maven
+target/
+*.class
+*.jar
+
+# Environment & Secrets
+.env
+
+# Data Lake (Keep large data out of GitHub)
+data_lake/
+*.parquet
+*.csv
+
+# System Junk
+Zone.Identifier
+.DS_Store
