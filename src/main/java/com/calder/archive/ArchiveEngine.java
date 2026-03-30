@@ -25,15 +25,17 @@ public class ArchiveEngine {
 
     private static void pullQuantumData(HttpClient client, String token) {
         HttpRequest request = HttpRequest.newBuilder()
-            .uri(URI.create("https://quantum.ibm.com/api/backends"))
-            .header("Authorization", "Bearer " + token) // Proving who you are
+            .uri(URI.create("https://quantum.cloud.ibm.com/api/v1/backends"))
+            .header("Authorization", "Bearer " + token)
+            .header("Service-CRN", "YOUR_CRN_HERE")
+            .header("IBM-API-Version", "2026-02-15")
+            .header("accept", "application/json")
             .GET()
             .build();
 
         client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
             .thenApply(HttpResponse::body)
             .thenAccept(body -> {
-                // Limits the print to the first 1000 characters
                 String chunk = body.length() > 1000 ? body.substring(0, 1000) : body;
                 System.out.println("Data Sample:\n" + chunk + "...");
             })
