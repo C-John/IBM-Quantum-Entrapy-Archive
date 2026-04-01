@@ -95,3 +95,29 @@ Scope & Closure Mastery: Resolved a Java(536871575) error by implementing a fina
 Environment Optimization: Configured settings.json to enable automatic build synchronization and suppressed nullAnalysis to streamline the development workflow within the Java Dev Container.
 
 Log Evolution: Officially transitioned from "Lessons Learned" to a formal Engineering Journal to better document the technical architecture and decision-making process for future stakeholders.
+
+Engineering Journal: Final Entry
+
+Timestamp: 2026-03-30 | 16:00 CST
+
+Extraction Milestone: Successfully retrieved authenticated hardware metrics from the v1/backends endpoint, confirming the "Vault Pattern" and redirect logic are fully functional.
+
+Data Verification: Confirmed visibility of complex hardware attributes, including coupling_maps and performance_metrics, marking the successful completion of the Extract phase.
+
+Session Close: Java environment stabilized, token caching active, and raw data pipeline verified.
+
+Engineering Journal: Milestone Update
+
+Timestamp: 2026-04-01 | 10:15 CST
+
+Data Lake Initialization & Parallel Extraction
+
+Automated Extraction: Successfully executed the first pipeline step to pull the JSON file detailing the health of quantum machines.
+
+Asynchronous Processing: Implemented CompletableFuture to run parallel HTTP GET requests for individual backend properties without blocking the main thread.
+
+Data Partitioning: Engineered the local data lake structure by organizing folders by date and machine.
+
+Initial Transformation: Initiated the Java Cleaning Engine to flatten and extract specific metrics. Successfully parsed the nested JSON tree to extract median two-qubit error rates.
+
+Defensive Programming: Integrated robust validation to prevent null pointer exceptions when processing IBM API responses.
