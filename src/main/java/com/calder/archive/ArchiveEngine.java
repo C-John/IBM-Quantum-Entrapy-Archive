@@ -136,18 +136,20 @@ public class ArchiveEngine {
 
                     if (devices != null && devices.isArray()) {
                         for (JsonNode node : devices) {
-                            if (node.has("name")) {
-                                String name = node.get("name").asText();
-                                
-                                // Extract the median error from the index data
-                                if (node.has("performance_metrics")) {
-                                    double medianError = node.path("performance_metrics")
-                                                            .path("two_q_error_median")
-                                                            .path("value")
-                                                            .asDouble();
-                                    System.out.println("Backend: " + name + " | 2Q Error Median: " + medianError);
-                                }
+                            
+                            String name = node.isObject() ? node.path("name").asText() : node.asText();
+                            // String name = node.get("name").asText();
+                            
+                            // Extract the median error from the index data
+                            if (node.has("performance_metrics")) {
+                                double medianError = node.path("performance_metrics")
+                                                        .path("two_q_error_median")
+                                                        .path("value")
+                                                        .asDouble();
+                                System.out.println("Backend: " + name + " | 2Q Error Median: " + medianError);
+                            }
 
+                            if (name != null && !name.isEmpty()) {
                                 tasks.add(fetchDetails(token, name, dailyDir));
                             }
                         }
